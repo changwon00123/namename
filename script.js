@@ -31,7 +31,30 @@ function scheduleSlides(){clearInterval(slideTimer);if(playing&&!window.matchMed
 function modal(title,message){$('#dialog-title').textContent=title;$('#dialog-message').textContent=message;$('#message-dialog').showModal()}
 function formatPage(group,item){const g=MENU.find(m=>m.id===group),it=g?.items.find(x=>x[0]===item);return {g,it,title:it?.[1]||g?.name||'페이지'}}
 function pageBody(group,item,title){const key=`${group}/${item}`;
- if(key==='about/greeting')return `<p class="lead">소리로 잇는 오늘, 세상을 울리는 내일</p><p>판소리대학교 홈페이지에 오신 여러분을 환영합니다.</p><p>판소리대학교는 한국 전통예술의 깊이를 탐구하고, 현대의 다양한 문화와 융합하는 창의적 예술인재 양성을 지향하는 가상의 대학입니다. 우리 소리를 배우고 나누며, 세계와 소통하는 새로운 교육의 장을 열겠습니다.</p><div class="info-block"><h3>전통을 존중하며 미래를 향하는 배움</h3><p>정직한 탐구, 자유로운 창작, 따뜻한 협력의 정신으로 문화예술의 내일을 함께 만들어갑니다.</p><p style="text-align:right;font-weight:700">판소리대학교</p></div>`;
+ if(key==='about/greeting')return `
+ <div class="president-profile">
+   <div class="president-portrait"><img src="assets/president-kang.webp" width="420" height="560" alt="판소리대학교 강문경 총장 프로필 사진"></div>
+   <div class="president-greeting">
+     <span class="pill-label">PRESIDENT’S MESSAGE</span>
+     <p class="lead">소리로 잇는 오늘,<br>세상을 울리는 내일</p>
+     <p>판소리대학교 홈페이지를 찾아주신 여러분을 환영합니다.</p>
+     <p>판소리는 우리의 삶과 이야기를 노래로 이어온 소중한 문화유산입니다. 배움과 나눔, 문화예술의 힘을 바탕으로 서로의 목소리에 귀 기울이고 함께 성장하는 대학을 꿈꿉니다.</p>
+     <p>저는 지역사회와 함께한 봉사활동과 문화예술 활동의 가치를 소중히 생각합니다. 전통의 아름다움을 배우고 나누는 따뜻한 교육의 장을 만들어 가겠습니다.</p>
+     <p>여러분의 관심과 참여가 판소리대학교의 새로운 울림이 되길 바랍니다. 감사합니다.</p>
+     <p class="president-profile-sign">판소리대학교 총장 <strong>강문경</strong></p>
+   </div>
+ </div>
+ <section class="president-career" aria-label="총장 주요 자격 및 활동">
+   <div class="career-heading"><span class="president-kicker">PROFILE &amp; ACTIVITIES</span><h3>총장 주요 자격 및 활동</h3><p>제공된 정보를 기준으로 정리한 소개</p></div>
+   <div class="career-list">
+      <div class="career-item"><span class="career-number">01</span><div><h4>사회복지사 자격증</h4><p>사회복지 분야 전문 자격 보유</p></div></div>
+      <div class="career-item"><span class="career-number">02</span><div><h4>한글 · 엑셀 · 파워포인트</h4><p>문서 작성 및 사무 프로그램 활용 역량</p></div></div>
+      <div class="career-item"><span class="career-number">03</span><div><h4>사서 자원봉사 활동</h4><p>독서 및 자료 이용 지원을 위한 봉사활동</p></div></div>
+      <div class="career-item"><span class="career-number">04</span><div><h4>도서관 자원활동가</h4><p>지역 도서관 관련 자원활동 참여</p></div></div>
+      <div class="career-item"><span class="career-number">05</span><div><h4>판소리 공연 참가</h4><p>우리 전통예술을 알리는 공연 활동 참여</p></div></div>
+   </div>
+ </section>
+ <p class="president-disclaimer">※ 총장 인사말은 홈페이지 제작을 위해 작성한 예시 문안이며, 학력·경력 기간·수상 이력 등 제공되지 않은 정보는 추가하지 않았습니다.</p>`;
  if(key==='about/vision')return `<p class="lead">우리의 소리로 세계를 연결하는 문화예술 교육</p><div class="info-grid"><div class="info-tile"><strong>전통의 계승</strong><p>판소리와 한국 전통예술의 가치 보존 및 발전</p></div><div class="info-tile"><strong>창의적 융합</strong><p>예술과 기술, 지역과 세계를 잇는 융합교육</p></div><div class="info-tile"><strong>세계와 교류</strong><p>K-문화의 다양성과 지속가능한 국제 교류</p></div></div><div class="info-block"><h3>교육 목표</h3><p>전통예술 전문성 · 창의적 표현 역량 · 문화적 소통 능력 · 공동체 책임의식</p></div>`;
  if(key==='about/symbol')return `<p class="lead">부채와 음악의 선율이 만나 탄생한 상징</p><div class="info-block"><h3>판소리대학교의 로고</h3><p>전통 판소리 공연에 사용되는 부채의 형태와 소리의 흐름을 하나의 선율로 표현한 심볼입니다.</p><p><b>BURGUNDY</b> · 문화의 깊이와 열정 &nbsp; <b>IVORY</b> · 따뜻한 배움 &nbsp; <b>NAVY</b> · 신뢰와 미래</p></div>`;
  if(group==='square'){const rows=item==='academic'?NEWS.academic:item==='events'||item==='culture'?NEWS.event:[...NEWS.notice,...NEWS.academic];return `<p class="lead">판소리대학교의 새로운 소식을 전합니다.</p><ul class="page-notice-list">${rows.map(([a,b])=>`<li><a href="#${group}/${item}" data-detail="${a}">${a}</a><time>${b}</time></li>`).join('')}</ul><p style="font-size:13px;color:#888">※ 시연용으로 구성한 예시 공지사항입니다.</p>`}
