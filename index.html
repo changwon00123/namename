@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#880c36" />
+  <meta name="description" content="판소리대학교 — 소리로 잇는 오늘, 세상을 울리는 내일. 전통을 넘어 세계로 향하는 K-문화의 중심." />
+  <title>판소리대학교 | PANSORI UNIVERSITY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=Noto+Serif+KR:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">본문으로 바로가기</a>
+  <header class="site-header" id="site-header">
+    <a href="#home" class="brand" aria-label="판소리대학교 홈페이지">
+      <svg class="brand-mark" viewBox="0 0 90 92" role="img" aria-label="음악 선율과 부채를 결합한 판소리대학교 로고">
+        <path d="M40 76C15 64 12 38 30 23c9-8 23-5 25 5 2 11-11 18-22 19M40 76c18 9 28-5 29-15 1-10-11-19-21-15" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+        <path d="M36 74C41 55 47 34 49 12c1-15 13-12 11 0-3 10-15 10-19 0" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round"/>
+        <path d="M46 72Q66 48 85 70L72 86Z" fill="currentColor"/><path d="M46 72L59 81M46 72l23 14M46 72l33 8M46 72l38-2" stroke="#fff2e7" stroke-width="1.8"/>
+      </svg>
+      <span class="brand-words"><strong>판소리 대학교</strong><small>PANSORI UNIVERSITY</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="주요 메뉴" id="desktop-nav"></nav>
+    <div class="header-tools">
+      <button class="text-tool" data-action="login">로그인</button><span class="tool-sep"></span>
+      <button class="text-tool" data-action="sitemap">사이트맵</button><span class="tool-sep"></span>
+      <button class="icon-button search-toggle" aria-label="검색 열기" aria-expanded="false" id="search-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.8" cy="10.8" r="7.5"/><path d="m16.5 16.5 5 5"/></svg></button>
+      <button class="all-menu" id="all-menu" aria-expanded="false">전체메뉴 <span class="hamburger"><i></i><i></i><i></i></span></button>
+    </div>
+  </header>
+  <div class="mega-menu" id="mega-menu" hidden></div>
+  <div class="search-panel" id="search-panel" hidden><form id="search-form" role="search"><label for="site-search">찾으시는 정보가 있나요?</label><div class="search-field"><input id="site-search" type="search" placeholder="학과, 학사일정, 공지사항 검색" autocomplete="off" required /><button type="submit">검색</button></div><small>인기 검색어: 입학안내 · 장학금 · 학사일정 · 공연</small></form></div>
+  <main id="main">
+    <div id="home-view">
+      <section class="hero" aria-label="판소리대학교 소개">
+        <div class="hero-photo" aria-hidden="true"></div><div class="hero-veil" aria-hidden="true"></div>
+        <div class="petal petal-one" aria-hidden="true"></div><div class="petal petal-two" aria-hidden="true"></div>
+        <div class="hero-copy" id="hero-copy"><p class="hero-eyebrow">소리로 잇는 오늘,<br/>세상을 울리는 내일</p><h1><span>판소리</span> 대학교</h1><p class="hero-subtitle">전통을 넘어, 세계로 향하는 K-문화의 중심</p><a href="#about/greeting" class="outlined-cta">대학을 더 알아보기 <span aria-hidden="true">→</span></a></div>
+        <div class="hero-controls"><span class="slide-count"><b id="slide-current">01</b> / 03</span><span class="vertical-rule"></span><button aria-label="이전 슬라이드" id="slide-prev">‹</button><button aria-label="자동 재생 일시정지" id="slide-pause">Ⅱ</button><button aria-label="다음 슬라이드" id="slide-next">›</button><span class="progress-tracks" id="progress-tracks"><i class="active"></i><i></i><i></i></span></div>
+        <div class="quick-links" aria-label="자주 찾는 서비스">
+          <a href="#admission/undergraduate"><span class="q-icon">♧</span> 수강신청</a><a href="#academics/calendar"><span class="q-icon">▣</span> 종합정보</a><a href="#campus/library"><span class="q-icon">▤</span> 도서관</a><a href="#academics/calendar"><span class="q-icon">▦</span> 학사일정</a><a href="#academics/certificates"><span class="q-icon">▤</span> 증명서발급</a><a href="#campus/online"><span class="q-icon">◎</span> nCyber</a>
+        </div>
+      </section>
+      <section class="dashboard" aria-label="대학 주요 소식">
+        <a class="campus-card content-card" href="#campus/life"><img src="assets/campus-life.webp" alt="캠퍼스에서 펼쳐지는 전통 공연과 북"/><div class="campus-card-shade"></div><div class="card-copy"><span class="card-kicker">CAMPUS LIFE</span><h2>판소리대학교의 오늘</h2><p>전통과 현대가 어우러진<br/>예술과 감성의 캠퍼스</p><span class="small-cta">더보기 <b>→</b></span></div></a>
+        <section class="notice-card content-card"><div class="notice-heading"><div><span class="card-kicker">NOTICE &amp; NEWS</span><h2>대학 소식</h2></div><a href="#square/notices" aria-label="대학 소식 더보기">더보기 &nbsp;＋</a></div><div class="news-tabs" role="tablist"><button class="active" role="tab" aria-selected="true" data-tab="notice">공지사항</button><button role="tab" aria-selected="false" data-tab="academic">학사안내</button><button role="tab" aria-selected="false" data-tab="event">행사안내</button></div><ul class="news-list" id="news-list"></ul></section>
+        <a class="culture-card content-card" href="#square/culture"><img src="assets/culture.webp" alt="전통 궁궐과 노을을 표현한 문화행사 배너"/><div class="culture-overlay"><div class="culture-slogan">판소리,<br/>세상을 잇다</div><span class="culture-link">문화행사 살펴보기 &nbsp; →</span><div class="culture-dots"><i class="selected"></i><i></i><i></i></div></div></a>
+      </section>
+    </div>
+    <div id="page-view" hidden><section class="page-hero"><div class="page-hero-inner"><p class="page-overline">PANSORI UNIVERSITY</p><h1 id="page-title">대학소개</h1><p id="page-description">전통을 잇고 새로운 미래를 열어갑니다.</p></div></section><div class="breadcrumb" id="breadcrumb"></div><div class="page-layout"><aside class="side-nav"><h2 id="side-title">대학소개</h2><nav id="side-links" aria-label="하위 메뉴"></nav></aside><article class="page-content"><div class="page-title-row"><p id="page-category">PANSORI UNIVERSITY</p><h2 id="content-title"></h2></div><div id="page-body"></div></article></div></div>
+  </main>
+  <footer class="site-footer"><div class="footer-inner"><a class="footer-brand" href="#home"><svg viewBox="0 0 90 92" aria-hidden="true"><path d="M40 76C15 64 12 38 30 23c9-8 23-5 25 5 2 11-11 18-22 19M40 76c18 9 28-5 29-15 1-10-11-19-21-15M36 74C41 55 47 34 49 12c1-15 13-12 11 0-3 10-15 10-19 0" fill="none" stroke="currentColor" stroke-width="5"/><path d="M46 72Q66 48 85 70L72 86Z" fill="currentColor"/></svg><span><b>판소리 대학교</b><small>PANSORI UNIVERSITY</small></span></a><div class="footer-info"><div class="footer-policy"><a href="#about/privacy">개인정보처리방침</a><a href="#about/terms">이메일무단수집거부</a><a href="#about/directions">오시는 길</a></div><p>판소리대학교 &nbsp; | &nbsp; 본 홈페이지는 웹사이트 시연용 가상 대학교 프로젝트입니다.</p><p>COPYRIGHT © 2026 PANSORI UNIVERSITY. ALL RIGHTS RESERVED.</p></div><div class="social-links"><a href="#square/culture" aria-label="유튜브">▶</a><a href="#square/culture" aria-label="인스타그램">◎</a><a href="#square/culture" aria-label="페이스북">f</a><a href="#home" aria-label="홈">⌂</a></div></div></footer>
+  <div class="menu-backdrop" id="menu-backdrop" hidden></div><aside class="drawer" id="drawer" aria-label="전체메뉴" aria-hidden="true"><div class="drawer-top"><span>전체메뉴 <small>ALL MENU</small></span><button id="drawer-close" aria-label="메뉴 닫기">✕</button></div><div id="drawer-content"></div></aside>
+  <dialog id="message-dialog"><div class="dialog-inner"><button id="dialog-close" class="dialog-x" aria-label="닫기">✕</button><h2 id="dialog-title"></h2><p id="dialog-message"></p><button class="dialog-confirm" id="dialog-confirm">확인</button></div></dialog>
+</body>
+</html>
