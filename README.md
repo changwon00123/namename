@@ -55,12 +55,13 @@
 GitHub Pages에 올린 프로필 이미지는 인터넷에 공개됩니다. 해당 인물의 사진과 성함을 공개하는 데 필요한 동의를 확인해 주세요.
 
 
-## 총장 사진 표시 문제 해결
-- `assets/president-kang.jpg`를 `assets` 폴더에 업로드하세요.
-- `index.html`, `script.js` 모두 `assets/president-kang.jpg?v=20261117-2`를 사용합니다. `?v=` 부분은 캐시 갱신용이며 실제 파일명에는 포함되지 않습니다.
-- 화면에 사진이 없으면 배포된 사이트에서 `/assets/president-kang.jpg` 경로를 직접 열어 404 오류 여부를 확인하세요. 프로젝트 저장소 배포라면 `https://사용자명.github.io/저장소명/assets/president-kang.jpg` 입니다.
-- 로딩 오류가 아니라 얼굴 인상이 달라 보이는 문제라면 AI 보정본 대신 원본 사진을 크롭한 이미지로 교체해야 합니다.
-
+## 총장 사진 표시 문제 해결 (2026-11-18)
+- 메인 페이지 `index.html` 및 총장 인사말 `script.js` 모두 **`assets/president-kang.webp`를 우선 표시**하도록 통일했습니다.
+- WebP 이미지 로딩 실패 시 `assets/president-kang.jpg`로 자동 전환합니다. 두 이미지는 ZIP에 포함됩니다.
+- 새 버전 쿼리(`?v=20261118-portrait-fix`)로 이전 브라우저 캐시의 영향을 줄입니다.
+- GitHub에서 파일을 부분적으로 교체했다면 `index.html`, `script.js`, `assets/president-kang.webp`, `assets/president-kang.jpg`가 모두 있어야 합니다.
+- 사진 파일 직접 확인: `https://사용자명.github.io/저장소명/assets/president-kang.webp`.
+- **이미지가 표시되더라도 실제 인물과 얼굴이 다르게 보인다면** AI 보정 사진의 문제이므로 원본 증명사진 크롭본을 사용하는 것이 정확합니다.
 
 ## 판소리 특화 확장 (2026-11-17)
 
@@ -84,3 +85,13 @@ GitHub Pages에 올린 프로필 이미지는 인터넷에 공개됩니다. 해�
 
 ## 판소리 영상관
 `#square/videos`에서 확인합니다. 영상 등록은 `script.js`의 `VIDEO_ENTRIES` 배열에 `{title:'제목',category:'공연',youtubeId:'11자리영상ID',date:'2026-11-17',artist:'공연자'}` 형태로 추가하세요. 저작권과 초상권을 확인한 영상만 게시하세요.
+
+
+## 사진 갤러리 (2020 충무공을 회상하는 공연)
+
+- 메인 페이지에 2장 카드뉴스형 가로 슬라이더 추가. 좌우 버튼, 터치 스와이프, 자동 순환(5.5초), 접근성 설정 시 자동순환 중단.
+- `#square/gallery` 에 사진 게시판, 클릭 시 원본 비율 확대 다이얼로그. 좌우 화살표 키와 닫기 버튼 지원.
+- 포함된 사진: `assets/gallery-2020-1.jpg`, `assets/gallery-2020-2.jpg`. 제공된 두 PNG를 화질 유지하며 JPEG로 변환해 포함.
+- 새 사진 게시: `assets` 폴더에 이미지 추가 → `gallery.js` 맨 위 `GALLERY_ITEMS` 배열에 `image`, `title`, `date`, `description`, `alt` 등 항목을 추가. 별도 서버 불필요.
+- 사진 2장은 사용자가 제공한 자료입니다. 사진 속 공연자 이름은 제공되지 않았으므로 임의 표기하지 않았습니다.
+- 공개 배포 전 사진 속 인물 및 촬영자의 공개·사용 권한 확인 필요.

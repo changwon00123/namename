@@ -3,7 +3,7 @@ const MENU = [
   {id:'colleges',name:'대학/대학원',desc:'전통을 바탕으로 미래를 만드는 배움',items:[['traditional','전통예술대학'],['pansori','판소리학과'],['music','음악공연예술대학'],['creative','문화콘텐츠대학'],['liberal','교양대학'],['graduate','대학원']]},
   {id:'admission',name:'입학안내',desc:'여러분의 새로운 소리가 시작되는 곳',items:[['undergraduate','학부 입학'],['apply','온라인 원서접수'],['guide','2027 모집요강'],['graduate','대학원 입학'],['transfer','편입학 안내'],['scholarship','장학금 안내']]},
   {id:'academics',name:'학사정보',desc:'배움의 모든 순간을 함께합니다',items:[['calendar','학사일정'],['registration','수강신청'],['records','학적 안내'],['scholarship','장학 제도'],['certificates','증명서 발급']]},
-  {id:'square',name:'판소리광장',desc:'우리 대학의 새로운 이야기를 만나보세요',items:[['notices','공지사항'],['academic','학사안내'],['events','행사안내'],['culture','문화행사'],['videos','공연 영상관'],['news','대학 뉴스']]},
+  {id:'square',name:'판소리광장',desc:'우리 대학의 새로운 이야기를 만나보세요',items:[['notices','공지사항'],['academic','학사안내'],['events','행사안내'],['culture','문화행사'],['videos','공연 영상관'],['gallery','공연 사진 갤러리'],['news','대학 뉴스']]},
   {id:'campus',name:'캠퍼스생활',desc:'소리와 예술이 머무는 캠퍼스',items:[['life','캠퍼스 라이프'],['library','도서관'],['clubs','동아리'],['online','온라인 강의'],['facilities','편의시설']]}
 ];
 const NEWS={
@@ -52,8 +52,8 @@ const MASTER_TIMELINE=[
  ['2022','제1회 이순신상 수상','충남교육청 주관 제1회 이순신상 수상자로 선정','https://www.nocutnews.co.kr/news/5778426'],
  ['2024','제30회 아산시민대상 수상','아산시 문화체육부문 수상자 선정','https://www.asan.go.kr/main/cms/?PageNo=32&category=&m_mode=view&no=131&pds_no=2024100213354977593&tb_nm=city_news_notice']
 ];
-const MASTER_IMAGE='assets/master-kim.jpg';
-function masterPortrait(){return `<div class="master-photo"><img src="${MASTER_IMAGE}" alt="김판순 단장 사진" loading="lazy" onerror="this.onerror=null;this.src='assets/master-placeholder.svg';this.alt='김판순 단장 사진 등록 대기 이미지';"><small>※ 실제 사진 사용 허락 후 assets/master-kim.jpg 파일을 추가하세요.</small></div>`}
+const MASTER_IMAGE='assets/master-placeholder.svg';
+function masterPortrait(){return `<div class="master-photo"><img src="${MASTER_IMAGE}" alt="김판순 단장 사진" loading="lazy" onerror="this.onerror=null;this.src='assets/master-placeholder.svg';this.alt='김판순 단장 사진 등록 대기 이미지';"><small>※ 실제 사진 사용 허락 후 assets/master-placeholder.svg 파일을 추가하세요.</small></div>`}
 function masterPage(){return `${demoBanner()}<div class="master-biography">${masterPortrait()}<div class="master-text"><span class="pill-label">PANSORI MASTER</span><h3>김판순 <small>단장</small></h3><p class="master-title">판소리대학교 판소리 스승 소개 · 아산우리소리창극단 단장</p><p>판소리고법 이수자로 전통 판소리와 창극 공연, 지역 역사문화 교육에 참여해 온 예술인입니다. 충무공의 정신을 알리는 창작·교육 활동으로 제1회 이순신상을 수상했으며 2024년 아산시민대상 문화체육부문 수상자로도 선정되었습니다.</p><div class="master-badges"><span>판소리고법 이수자</span><span>2022 제1회 이순신상</span><span>2024 아산시민대상 문화체육부문</span></div><a href="#about/master-history" class="primary-link">주요 활동 연혁 자세히 보기 →</a></div></div><div class="info-grid"><div class="info-tile"><strong>소리와 고법</strong><p>판소리와 장단의 이해를 바탕으로 한 전통예술 전승</p></div><div class="info-tile"><strong>전통 창극</strong><p>지역 문화예술 공연 및 창극 활동</p></div><div class="info-tile"><strong>역사문화 교육</strong><p>충무공의 삶을 주제로 한 판소리와 문화 프로그램</p></div></div><div class="info-block"><h3>공개자료로 확인한 주요 경력</h3><ul class="master-achievements"><li>국가무형문화재 제5호 판소리고법 이수자로 소개 (2022년 보도 기준)</li><li>2007년 아산우리소리창극단 창단공연 관련 보도</li><li>2016년 「임진왜란을 기억하라」 역사문화 프로그램 활동</li><li>2022년 제1회 이순신상 수상</li><li>2024년 아산시민대상 문화체육부문 수상</li></ul><p class="source-note">자료: <a target="_blank" rel="noopener noreferrer" href="https://www.nocutnews.co.kr/news/5778426">노컷뉴스 (2022)</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.asan.go.kr/main/cms/?PageNo=32&category=&m_mode=view&no=131&pds_no=2024100213354977593&tb_nm=city_news_notice">아산시청 (2024)</a> · <a target="_blank" rel="noopener noreferrer" href="https://www.yna.co.kr/view/AKR20160725124900063">연합뉴스 (2016)</a></p></div><p class="source-note">※ '판소리대학교 스승'은 이 시연 홈페이지의 설정으로, 실제 학교 재직 사실을 뜻하지 않습니다.</p>`}
 function masterHistoryPage(){return `${demoBanner()}<div class="history-intro"><span class="pill-label">ARTIST'S HISTORY</span><h3>김판순 단장 주요 활동 연혁</h3><p>이 페이지는 판소리대학교의 창작 설립 연혁이 아닌, 김판순 단장님의 공개 보도자료 및 공공기관 발표로 확인된 예술·문화 활동 기록입니다.</p></div><div class="history-timeline">${MASTER_TIMELINE.map(([year,title,desc,url])=>`<div class="timeline-row"><div class="timeline-year">${year}<small>활동 연혁</small></div><div class="timeline-dot"></div><p><strong>${title}</strong><br>${desc}<br><a href="${url}" target="_blank" rel="noopener noreferrer" class="source-link">근거 자료 확인 ↗</a></p></div>`).join('')}</div>`}
 const VIDEO_ENTRIES=[
@@ -68,7 +68,7 @@ function handleApplication(e){e.preventDefault();const f=e.target;if(!f.reportVa
 function pageBody(group,item,title){const key=`${group}/${item}`;
  if(key==='about/greeting')return `
  <div class="president-profile">
-   <div class="president-portrait"><img src="assets/president-kang.jpg?v=20261117-2" width="420" height="560" alt="판소리대학교 강문경 총장 프로필 사진"></div>
+   <div class="president-portrait"><img src="assets/president-kang.webp?v=20261118-portrait-fix" onerror="this.onerror=null;this.src='assets/president-kang.jpg?v=20261118-portrait-fix';" width="420" height="560" alt="판소리대학교 강문경 총장 프로필 사진"></div>
    <div class="president-greeting">
      <span class="pill-label">PRESIDENT’S MESSAGE</span>
      <p class="lead">소리로 잇는 오늘,<br>세상을 울리는 내일</p>
@@ -93,6 +93,7 @@ function pageBody(group,item,title){const key=`${group}/${item}`;
  if(key==='about/master')return masterPage();
  if(key==='about/master-history')return masterHistoryPage();
  if(key==='square/videos')return videoPage();
+ if(key==='square/gallery')return galleryPage();
  if(key==='about/history')return historyPage();
  if(key==='admission/apply')return applicationPage();
  if(key==='admission/guide'||key==='admission/undergraduate')return admissionGuide();
