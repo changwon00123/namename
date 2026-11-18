@@ -2,13 +2,13 @@
 // 새로운 사진 추가: assets에 이미지 업로드 후 GALLERY_ITEMS에 항목을 추가하세요.
 const GALLERY_ITEMS = [
   {
-    id:'2020-pansori-01', image:'assets/gallery-2020-1.jpg', title:'충무공을 회상하는 판소리 공연',
+    id:'2020-pansori-01', image:'./gallery-2020-1.jpg', title:'충무공을 회상하는 판소리 공연',
     category:'공연 현장', date:'2020.10', subtitle:'2020 다시 생각해보는 임진왜란',
     description:'2020년 「충무공을 회상하는」 공연 무대 기록. 전통 의상을 입은 출연진들이 소리와 연희를 선보이는 장면입니다.',
     alt:'2020 다시 생각해보는 임진왜란, 충무공을 회상하는 공연 무대. 보라색 한복과 노란색·붉은색 한복 차림의 출연진이 마이크 앞에서 공연하는 모습'
   },
   {
-    id:'2020-pansori-02', image:'assets/gallery-2020-2.jpg', title:'충무공을 회상하는 무대의 순간',
+    id:'2020-pansori-02', image:'./gallery-2020-2.jpg', title:'충무공을 회상하는 무대의 순간',
     category:'공연 현장', date:'2020.10', subtitle:'전통 판소리와 연희의 어울림',
     description:'「충무공을 회상하는」 공연의 또 다른 장면. 여러 출연진이 함께 무대에 올라 공연하는 모습을 담았습니다.',
     alt:'충무공을 회상하는 공연 중 네 명의 전통 의상 차림 출연진이 야외 무대에서 함께 공연하는 모습'

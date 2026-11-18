@@ -11,7 +11,30 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800;900&family=Noto+Serif+KR:wght@500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="gallery.js" defer></script>
+  <script src="audio.js" defer></script>
   <script src="script.js" defer></script>
+
+  <script>
+    // 이미지 위치 복구: GitHub에 최상위 또는 assets 폴더로 올렸을 때 모두 지원
+    document.addEventListener('error', function(event) {
+      const img = event.target;
+      if (!(img instanceof HTMLImageElement)) return;
+      const fallback = img.dataset.imageFallback || '';
+      if (fallback === 'done') return;
+      const filename = (img.currentSrc || img.src).split('?')[0].split('/').pop();
+      if (!filename) return;
+      if (!fallback) {
+        img.dataset.imageFallback = 'assets';
+        img.src = 'assets/' + filename + '?v=20261118-images-fixed-v3';
+      } else {
+        img.dataset.imageFallback = 'done';
+        if (filename !== 'master-placeholder.svg') {
+          img.src = './master-placeholder.svg';
+          img.alt = img.alt + ' (이미지 파일 확인 필요)';
+        }
+      }
+    }, true);
+  </script>
 </head>
 <body>
   <a href="#main" class="skip-link">본문으로 바로가기</a>
@@ -46,9 +69,9 @@
         </div>
       </section>
       <section class="dashboard" aria-label="대학 주요 소식">
-        <a class="campus-card content-card" href="#campus/life"><img src="assets/campus-life.webp" alt="캠퍼스에서 펼쳐지는 전통 공연과 북"/><div class="campus-card-shade"></div><div class="card-copy"><span class="card-kicker">CAMPUS LIFE</span><h2>판소리대학교의 오늘</h2><p>전통과 현대가 어우러진<br/>예술과 감성의 캠퍼스</p><span class="small-cta">더보기 <b>→</b></span></div></a>
+        <a class="campus-card content-card" href="#campus/life"><img src="./campus-life.webp" alt="캠퍼스에서 펼쳐지는 전통 공연과 북"/><div class="campus-card-shade"></div><div class="card-copy"><span class="card-kicker">CAMPUS LIFE</span><h2>판소리대학교의 오늘</h2><p>전통과 현대가 어우러진<br/>예술과 감성의 캠퍼스</p><span class="small-cta">더보기 <b>→</b></span></div></a>
         <section class="notice-card content-card"><div class="notice-heading"><div><span class="card-kicker">NOTICE &amp; NEWS</span><h2>대학 소식</h2></div><a href="#square/notices" aria-label="대학 소식 더보기">더보기 &nbsp;＋</a></div><div class="news-tabs" role="tablist"><button class="active" role="tab" aria-selected="true" data-tab="notice">공지사항</button><button role="tab" aria-selected="false" data-tab="academic">학사안내</button><button role="tab" aria-selected="false" data-tab="event">행사안내</button></div><ul class="news-list" id="news-list"></ul></section>
-        <a class="culture-card content-card" href="#square/culture"><img src="assets/culture.webp" alt="전통 궁궐과 노을을 표현한 문화행사 배너"/><div class="culture-overlay"><div class="culture-slogan">판소리,<br/>세상을 잇다</div><span class="culture-link">문화행사 살펴보기 &nbsp; →</span><div class="culture-dots"><i class="selected"></i><i></i><i></i></div></div></a>
+        <a class="culture-card content-card" href="#square/culture"><img src="./culture.webp" alt="전통 궁궐과 노을을 표현한 문화행사 배너"/><div class="culture-overlay"><div class="culture-slogan">판소리,<br/>세상을 잇다</div><span class="culture-link">문화행사 살펴보기 &nbsp; →</span><div class="culture-dots"><i class="selected"></i><i></i><i></i></div></div></a>
       </section>
 
       <section class="gallery-section" aria-labelledby="gallery-heading">
@@ -63,9 +86,15 @@
           <div class="gallery-carousel-bottom"><span id="gallery-counter" aria-live="polite">01 / 02</span><div id="gallery-dots" class="gallery-dots" aria-label="사진 선택"></div><span class="gallery-hint">← 좌우로 스와이프 →</span></div>
         </div>
       </section>
+      <section class="sound-showcase" aria-labelledby="sounds-title">
+        <div class="sound-showcase-inner">
+          <div><span class="sound-overline">THE SOUND OF PANSORI</span><h2 id="sounds-title">우리 소리, 언제 어디서나</h2><p>소리1 · 소리2 · 소리3, 세 곡을 감상해 보세요.<br>음원 재생은 방문자가 버튼을 누르면 시작됩니다.</p></div>
+          <div class="sound-quick"><button type="button" data-audio-play="0">▶ 소리1 듣기</button><a href="#square/audio">음악 감상실 전체보기 ↗</a></div>
+        </div>
+      </section>
       <section class="admission-feature" aria-label="입학 안내 바로가기"><div class="admission-feature-inner"><div><span>2027 PANSORI ADMISSIONS · DEMO</span><h2>소리의 미래가 시작되는 곳</h2><p>전통의 가르침을 잇는 판소리 전문 교육과정과 온라인 원서접수 체험</p></div><div class="admission-feature-actions"><a href="#admission/guide">2027 모집요강 보기 ↗</a><a href="#admission/apply">온라인 원서접수 체험 ↗</a></div></div></section><section class="president-feature" aria-labelledby="president-feature-title">
         <div class="president-feature-inner">
-          <div class="president-feature-image"><img src="assets/president-kang.webp?v=20261118-portrait-fix" onerror="this.onerror=null;this.src='assets/president-kang.jpg?v=20261118-portrait-fix';" alt="강문경 판소리대학교 총장 프로필 사진" loading="lazy" width="420" height="560" /></div>
+          <div class="president-feature-image"><img src="./president-kang.webp?v=20261118-images-fixed-v3" onerror="this.onerror=null;this.src='./president-kang.jpg?v=20261118-images-fixed-v3';" alt="강문경 판소리대학교 총장 프로필 사진" loading="lazy" width="420" height="560" /></div>
           <div class="president-feature-content">
             <span class="president-kicker">MESSAGE FROM THE PRESIDENT</span>
             <p class="president-small">판소리대학교 총장 인사말</p>
@@ -76,12 +105,29 @@
           </div>
         </div>
       </section>
-      <section class="master-feature" aria-labelledby="master-feature-title"><div class="master-feature-inner"><div class="master-feature-photo"><img src="assets/master-placeholder.svg" alt="김판순 단장 프로필" loading="lazy" onerror="this.onerror=null;this.src='assets/master-placeholder.svg';this.alt='김판순 단장 사진 등록 대기 이미지';"></div><div class="master-feature-text"><span class="president-kicker">TRADITION &amp; MASTER</span><h2 id="master-feature-title">소리를 잇는 스승,<br>김판순 단장님</h2><p>판소리고법 전승과 창극, 역사문화 교육 활동을 이어온 김판순 단장님의 주요 활동과 연혁을 만나보세요.</p><div class="master-feature-buttons"><a href="#about/master">스승 소개 보기 →</a><a href="#about/master-history">주요 활동 연혁 →</a><a href="#square/videos">판소리 영상관 →</a></div><small>※ 인물 사진은 사용 허락을 받은 파일로 교체할 수 있습니다.</small></div></div></section>
+      <section class="master-feature" aria-labelledby="master-feature-title"><div class="master-feature-inner"><div class="master-feature-photo"><img src="./gallery-2020-1.jpg" alt="판소리 공연 현장 사진. 사진 속 특정 인물을 김판순 단장으로 식별한 것은 아닙니다." loading="lazy" onerror="this.onerror=null;this.src='./master-placeholder.svg';this.alt='김판순 단장 사진 등록 대기 이미지';"></div><div class="master-feature-text"><span class="president-kicker">TRADITION &amp; MASTER</span><h2 id="master-feature-title">소리를 잇는 스승,<br>김판순 단장님</h2><p>판소리고법 전승과 창극, 역사문화 교육 활동을 이어온 김판순 단장님의 주요 활동과 연혁을 만나보세요.</p><div class="master-feature-buttons"><a href="#about/master">스승 소개 보기 →</a><a href="#about/master-history">주요 활동 연혁 →</a><a href="#square/videos">판소리 영상관 →</a></div><small>※ 공연 현장 사진입니다. 김판순 단장님의 인물 사진으로 확인된 이미지는 아닙니다.</small></div></div></section>
     </div>
     <div id="page-view" hidden><section class="page-hero"><div class="page-hero-inner"><p class="page-overline">PANSORI UNIVERSITY</p><h1 id="page-title">대학소개</h1><p id="page-description">전통을 잇고 새로운 미래를 열어갑니다.</p></div></section><div class="breadcrumb" id="breadcrumb"></div><div class="page-layout"><aside class="side-nav"><h2 id="side-title">대학소개</h2><nav id="side-links" aria-label="하위 메뉴"></nav></aside><article class="page-content"><div class="page-title-row"><p id="page-category">PANSORI UNIVERSITY</p><h2 id="content-title"></h2></div><div id="page-body"></div></article></div></div>
   </main>
   <footer class="site-footer"><div class="footer-inner"><a class="footer-brand" href="#home"><svg viewBox="0 0 90 92" aria-hidden="true"><path d="M40 76C15 64 12 38 30 23c9-8 23-5 25 5 2 11-11 18-22 19M40 76c18 9 28-5 29-15 1-10-11-19-21-15M36 74C41 55 47 34 49 12c1-15 13-12 11 0-3 10-15 10-19 0" fill="none" stroke="currentColor" stroke-width="5"/><path d="M46 72Q66 48 85 70L72 86Z" fill="currentColor"/></svg><span><b>판소리 대학교</b><small>PANSORI UNIVERSITY</small></span></a><div class="footer-info"><div class="footer-policy"><a href="#about/privacy">개인정보처리방침</a><a href="#about/terms">이메일무단수집거부</a><a href="#about/directions">오시는 길</a></div><p>판소리대학교 &nbsp; | &nbsp; 본 홈페이지는 웹사이트 시연용 가상 대학교 프로젝트입니다.</p><p>COPYRIGHT © 2026 PANSORI UNIVERSITY. ALL RIGHTS RESERVED.</p></div><div class="social-links"><a href="#square/culture" aria-label="유튜브">▶</a><a href="#square/culture" aria-label="인스타그램">◎</a><a href="#square/culture" aria-label="페이스북">f</a><a href="#home" aria-label="홈">⌂</a></div></div></footer>
   <dialog id="gallery-lightbox" class="gallery-lightbox" aria-label="갤러리 사진 크게 보기"><div class="gallery-lightbox-inner"><button type="button" class="gallery-lightbox-close" id="gallery-lightbox-close" aria-label="사진 닫기">✕</button><div class="gallery-lightbox-media"><img id="gallery-lightbox-image" alt="" /></div><div class="gallery-lightbox-footer"><div><strong id="gallery-lightbox-title"></strong><p id="gallery-lightbox-caption"></p></div><div class="gallery-lightbox-nav"><button id="gallery-lightbox-prev" type="button" aria-label="이전 사진">←</button><span id="gallery-lightbox-count"></span><button id="gallery-lightbox-next" type="button" aria-label="다음 사진">→</button></div></div></div></dialog>
+  <section class="audio-player" id="audio-player" aria-label="판소리 음악 플레이어">
+    <button class="audio-expand" type="button" id="audio-panel-toggle" aria-expanded="true" aria-controls="audio-player-controls">♫ <span>소리 감상</span></button>
+    <div class="audio-player-controls" id="audio-player-controls">
+      <div class="audio-art" aria-hidden="true">♪</div>
+      <div class="audio-meta"><strong id="audio-track-title">소리1</strong><span id="audio-status" role="status" aria-live="polite">재생 버튼을 눌러 감상하세요</span></div>
+      <div class="audio-buttons">
+        <button id="audio-prev" type="button" aria-label="이전 곡">⏮</button>
+        <button id="audio-toggle" type="button" aria-label="음악 재생">▶</button>
+        <button id="audio-next" type="button" aria-label="다음 곡">⏭</button>
+      </div>
+      <label class="audio-progress-label"><span class="visually-hidden">재생 위치</span><input type="range" id="audio-progress" min="0" max="1000" value="0" aria-label="재생 위치"><span class="audio-times"><small id="audio-current">0:00</small><small id="audio-total">0:00</small></span></label>
+      <label class="audio-volume-label" aria-label="볼륨">🔊 <input id="audio-volume" type="range" min="0" max="100" value="70"></label>
+      <button type="button" id="audio-repeat" class="audio-repeat" aria-pressed="false" title="전체 반복 재생">↻</button>
+      <a class="audio-page-link" href="#square/audio">목록 ↗</a>
+    </div>
+    <audio id="pansori-audio" preload="none"></audio>
+  </section>
   <div class="menu-backdrop" id="menu-backdrop" hidden></div><aside class="drawer" id="drawer" aria-label="전체메뉴" aria-hidden="true"><div class="drawer-top"><span>전체메뉴 <small>ALL MENU</small></span><button id="drawer-close" aria-label="메뉴 닫기">✕</button></div><div id="drawer-content"></div></aside>
   <dialog id="message-dialog"><div class="dialog-inner"><button id="dialog-close" class="dialog-x" aria-label="닫기">✕</button><h2 id="dialog-title"></h2><p id="dialog-message"></p><button class="dialog-confirm" id="dialog-confirm">확인</button></div></dialog>
 </body>
